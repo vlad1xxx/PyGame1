@@ -1,23 +1,17 @@
 import pygame
 
 try:
-    w, n_circle = map(int, input().split())
-    width = height = w * n_circle + w * n_circle
-    screen = pygame.display.set_mode((w * n_circle + w * n_circle, w * n_circle + w * n_circle))
+    n = int(input())
+    screen = pygame.display.set_mode((300, 300))
     pygame.init()
 
 
     def draw(screen):
         screen.fill((0, 0, 0))
-
-        for i in range(n_circle):
-            if i % 3 == 0:
-                pygame.draw.circle(screen, (255, 0, 0), (width / 2, height / 2), w * i + w, w)
-            elif i % 3 == 1:
-                pygame.draw.circle(screen, (0, 255, 0), (width / 2, height / 2), w * i + w, w)
-            else:
-                pygame.draw.circle(screen, (0, 0, 255), (width / 2, height / 2), w * i + w, w)
-
+        size = 150 // n
+        for i in range(0, n):
+            pygame.draw.ellipse(screen, (255, 255, 255), (150 - size * i - size, 0, (size * i + size) * 2, 300), 1)
+            pygame.draw.ellipse(screen, (255, 255, 255), (0, 150 - size * i - size, 300, (size * i + size) * 2), 1)
 
     draw(screen)
 
