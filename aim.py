@@ -4,13 +4,11 @@ try:
     w, n_circle = map(int, input().split())
     width = height = w * n_circle + w * n_circle
     screen = pygame.display.set_mode((w * n_circle + w * n_circle, w * n_circle + w * n_circle))
-    print(screen.get_size())
     pygame.init()
 
 
     def draw(screen):
         screen.fill((0, 0, 0))
-        screen.get_size()
 
         for i in range(n_circle):
             if i % 3 == 0:
