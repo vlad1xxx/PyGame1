@@ -11,7 +11,6 @@ try:
 
     def draw(screen):
         screen.fill((0, 0, 0))
-        screen.get_size()
 
         for i in range(n_circle):
             if i % 3 == 0:
